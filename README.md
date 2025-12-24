@@ -1,5 +1,5 @@
 
-# Smart Resume Analyzer
+# AI Resume Analyzer
 
 A small Flask-based service that extracts text from PDF/DOCX resumes and uses the Google Generative Language API (Gemini / text-bison) to produce a structured JSON resume analysis.
 
@@ -47,15 +47,7 @@ The app listens on port `7860` by default.
   - form upload: `file` field (multipart/form-data)
   - raw text: JSON body `{ "text": "<resume text>" }`
 
-Example curl (file upload):
-```powershell
-curl -X POST "http://localhost:7860/api/analyze" -F "file=@C:/path/to/resume.pdf"
-```
 
-Example curl (raw text):
-```powershell
-curl -X POST "http://localhost:7860/api/analyze" -H "Content-Type: application/json" -d '{"text":"Paste resume text here"}'
-```
 
 ## Notes
 - If your resumes are scanned images (not selectable text), add OCR (Tesseract) before analysis.
